@@ -1,21 +1,21 @@
 export const initialData = [
     {
       "id": 1,
-      "title": "Launch Epic Career 🚀",
+      "title": "Launch Epic Career 🚀🚀🚀",
       "description": "Create a killer Resume",
       "status": "todo",
       "board": "Launch Career"
     },
     {
       "id": 2,
-      "title": "Master JavaScript 💛",
+      "title": "Master JavaScript (⎚ᵕ⎚)",
       "description": "Get comfortable with the fundamentals",
       "status": "doing",
       "board": "Launch Career"
     },
     {
       "id": 3,
-      "title": "Keep on Going 🏆",
+      "title": "Keep on Going 👌",
       "description": "You're almost there",
       "status": "doing",
       "board": "Launch Career"
@@ -29,21 +29,21 @@ export const initialData = [
     },
     {
         "id": 5,
-        "title": "Understand Databases 📅",
+        "title": "Understand Databases 📊",
         "description": "Begin your backend journey",
         "status": "todo",
         "board": "Roadmap"
     },
     {
         "id": 6,
-        "title": "Crush Frameworks 🔨",
+        "title": "Crush Frameworks 💥🔨",
         "description": "Create a plan to study hard",
         "status": "todo",
         "board": "Roadmap"
     },
     {
         "id": 7,
-        "title": "Explore ES6 Features 🚀",
+        "title": "Explore ES6 Features 🔍",
         "description": "Learn modern JavaScript syntax and features",
         "status": "doing",
         "board": "Roadmap"
@@ -71,7 +71,7 @@ export const initialData = [
     },
     {
         "id": 11,
-        "title": "Learn Data Structures and Algorithms 📚",
+        "title": "Learn Data Structures and Algorithms 🗒️ᝰ.ᐟ",
         "description": "Study fundamental data structures and algorithms to solve coding problems efficiently",
         "status": "todo",
         "board": "Launch Career"

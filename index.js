@@ -2,10 +2,6 @@
 import { getTasks, createNewTask, putTask, patchTask,deleteTask  } from './utils/taskFunctions.js';
 import {initialData} from '/initialData.js';
 
-/*************************************************************************************************************************************************
- * FIX BUGS!!!
- * **********************************************************************************************************************************************/
-
 // Function checks if local storage already has data, if not it loads initialData to localStorage
 function initializeData() {
   if (!localStorage.getItem('tasks')) {
@@ -52,7 +48,7 @@ function fetchAndDisplayBoardsAndTasks() {
 // Creates different boards in the DOM
 function displayBoards(boards) {
   const boardsContainer = document.getElementById("boards-nav-links-div");
-  boardsContainer.innerHTML = ''; // Clears the container
+  boardsContainer.innerHTML = ''; 
   boards.forEach(board => {
     const boardElement = document.createElement("button");
     boardElement.textContent = board;
@@ -70,7 +66,7 @@ function displayBoards(boards) {
 
 // Filters tasks corresponding to the board name and displays them on the DOM.
 function filterAndDisplayTasksByBoard(boardName) {
-  const tasks = getTasks(); // Fetch tasks from a simulated local storage function
+  const tasks = getTasks(); 
   const filteredTasks = tasks.filter(task => task.board === boardName);
 
   // Ensure the column titles are set outside of this function or correctly initialized before this function runs
@@ -133,7 +129,7 @@ function addTaskToUI(task) {
 
   const taskElement = document.createElement('div');
   taskElement.className = 'task-div';
-  taskElement.textContent = task.title; // Modify as needed
+  taskElement.textContent = task.title; 
   taskElement.setAttribute('data-task-id', task.id);
   
   tasksContainer.appendChild(taskElement);
@@ -146,13 +142,13 @@ function setupEventListeners() {
   // Cancel adding new task event listener
   elements.cancelAddTaskBtn.addEventListener('click', () => {
     toggleModal(false);
-    elements.filterDiv.style.display = 'none'; // Also hide the filter overlay
+    elements.filterDiv.style.display = 'none'; 
   });
 
   // Clicking outside the modal to close it
   elements.filterDiv.addEventListener('click', () => {
     toggleModal(false);
-    elements.filterDiv.style.display = 'none'; // Also hide the filter overlay
+    elements.filterDiv.style.display = 'none'; 
   });
 
   // Show sidebar event listener  hideSideBarBtn
@@ -169,7 +165,7 @@ function setupEventListeners() {
   // Show Add New Task Modal event listener
   elements.createNewTaskBtn.addEventListener('click', () => {
     toggleModal(true);
-    elements.filterDiv.style.display = 'block'; // Also show the filter overlay
+    elements.filterDiv.style.display = 'block'; 
   });
 
   // Add new task form submission event listener
@@ -184,10 +180,6 @@ function setupEventListeners() {
 function toggleModal(show, modal = elements.modalWindow) {
   modal.style.display = show ? 'block' : 'none';
 }
-
-/*************************************************************************************************************************************************
- * COMPLETE FUNCTION CODE
- * **********************************************************************************************************************************************/
 
 function addTask(event) {
   event.preventDefault();
@@ -205,7 +197,7 @@ function addTask(event) {
   if (newTask) {
     addTaskToUI(newTask);
     toggleModal(false);
-    elements.filterDiv.style.display = 'none'; // Also hide the filter overlay
+    elements.filterDiv.style.display = 'none'; 
     event.target.reset();
     refreshTasksUI();
   }
@@ -231,7 +223,7 @@ function openEditTaskModal(task) {
     toggleModal(false, elements.editTaskModal);
   });
 
-  toggleModal(true, elements.editTaskModal); // Show the edit task modal
+  toggleModal(true, elements.editTaskModal); 
 }
 
 function saveTaskChanges(taskId) {
@@ -310,12 +302,11 @@ function deleteBoard () {
     activeBoard = localStorageBoard ? localStorageBoard : boards[0];
 
     const filteredTasks = tasks.filter(task => task.board === activeBoard);
-    filteredTasks.forEach((task) => {
+    filteredTasks.forEach((task) =>{
       deleteTask(task.id)
     })
     fetchAndDisplayBoardsAndTasks()
     refreshTasksUI()
   }
 }
-
 refreshTasksUI()

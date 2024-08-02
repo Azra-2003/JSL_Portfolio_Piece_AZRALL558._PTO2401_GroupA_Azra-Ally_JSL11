@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!-- index.html -->
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,15 +12,11 @@
     <title>Agile Board Task Management</title>
 </head>
 
-
 <body>
-    <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-bar" id="side-bar-div">
         <div id="side-logo-div">
             <img id="logo" src="./assets/logo-dark.svg" alt="logo-dark">
         </div>
-
-
         <div class="boards-nav-links-div" id="boards-nav-links-div">
             <h4 id="headline-sidepanel">ALL BOARDS</h4>
         </div>
@@ -64,7 +57,6 @@
             </div>
         </header>
 
-
         <div class="container">
             <main class="card-column-main">
                 <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
@@ -73,7 +65,6 @@
                         <span class="dot" id="todo-dot"></span>
                         <h4 id="toDoText" class="columnHeader">TODO</h4>
                     </div>
-                    <!-- Tasks container for TODO -->
                     <div class="tasks-container"></div>
                 </div>
                 <!-- DOING Column -->
@@ -82,7 +73,6 @@
                         <span class="dot" id="doing-dot"></span>
                         <h4 id="doingText" class="columnHeader">DOING</h4>
                     </div>
-                    <!-- Tasks container for DOING -->
                     <div class="tasks-container"></div>
                 </div>
                 <!-- DONE Column -->
@@ -124,8 +114,6 @@
         </div>
     </form>
 
-
-    <!-- Edit Task Modal: Form for editing an existing task's details. -->
     <div class="edit-task-modal-window" id="edit-task-modal-window">
         <form id="edit-task-form">
             <div class="edit-task-div" id="edit-task-header">
@@ -151,15 +139,7 @@
         </form>
     </div>
 
-
-
-
     <div id="filterDiv"></div>
-
-
-    <!-- JavaScript Import -->
     <script type="module" src="./index.js"></script>
 </body>
-
-
 </html>

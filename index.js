@@ -1,6 +1,6 @@
 // Import helper functions and initial data
 import { getTasks, createNewTask, putTask, patchTask,deleteTask  } from './utils/taskFunctions.js';
-import {initialData} from '/initialData.js';
+import {initialData} from './initialData.js'; //correction
 
 // Function checks if local storage already has data, if not it loads initialData to localStorage
 function initializeData() {

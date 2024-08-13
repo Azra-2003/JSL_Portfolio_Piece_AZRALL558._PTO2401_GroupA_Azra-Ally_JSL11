@@ -64,7 +64,7 @@ function displayBoards(boards) {
   });
 }
 
-// Filters tasks corresponding to the board name and displays them on the DOM.
+// Filters tasks corresponding to the board name and displays them on the DOM. // USER STORY 11
 function filterAndDisplayTasksByBoard(boardName) {
   const tasks = getTasks(); 
   const filteredTasks = tasks.filter(task => task.board === boardName);
@@ -89,7 +89,7 @@ function filterAndDisplayTasksByBoard(boardName) {
 
       // Listen for a click event on each task and open a modal
       taskElement.addEventListener('click', () => {
-        openEditTaskModal(task);
+        openEditTaskModal(task); // USER STORY 1 
       });
 
       tasksContainer.appendChild(taskElement);
@@ -97,7 +97,7 @@ function filterAndDisplayTasksByBoard(boardName) {
   });
 }
 
-function refreshTasksUI() {
+function refreshTasksUI() { // USER STORY 7 
   filterAndDisplayTasksByBoard(activeBoard);
 }
 
@@ -137,7 +137,7 @@ function addTaskToUI(task) {
 
 function setupEventListeners() {
   // Cancel editing task event listener
-  elements.cancelEditBtn.addEventListener('click', () => toggleModal(false, elements.editTaskModal));
+  elements.cancelEditBtn.addEventListener('click', () => toggleModal(false, elements.editTaskModal)); // USER STORY 9
 
   // Cancel adding new task event listener
   elements.cancelAddTaskBtn.addEventListener('click', () => {
@@ -153,7 +153,7 @@ function setupEventListeners() {
 
   // Show sidebar event listener  hideSideBarBtn
   elements.hideSideBarBtn.addEventListener('click', () => toggleSidebar(false));
-  elements.showSideBarBtn.addEventListener('click', () => toggleSidebar(true));
+  elements.showSideBarBtn.addEventListener('click', () => toggleSidebar(true)); // USER STORY 18
 
 
 
@@ -184,7 +184,7 @@ function toggleModal(show, modal = elements.modalWindow) {
 function addTask(event) {
   event.preventDefault();
 
-  // Assign user input to the task object
+  // Assign user input to the task object // USER STORY 26
   const task = {
     id: Date.now(), // Example ID generation
     title: document.getElementById('title-input').value,
@@ -203,11 +203,11 @@ function addTask(event) {
   }
 }
 
-function openEditTaskModal(task) {
+function openEditTaskModal(task) { // USER STORY 10 , 12
   // Set task details in modal inputs
-  document.getElementById('edit-task-title-input').value = task.title;
-  document.getElementById('edit-task-desc-input').value = task.description;
-  document.getElementById('edit-select-status').value = task.status;
+  document.getElementById('edit-task-title-input').value = task.title; 
+  document.getElementById('edit-task-desc-input').value = task.description; 
+  document.getElementById('edit-select-status').value = task.status; 
 
   // Get button elements from the task modal
   const saveChangesBtn = document.getElementById('save-task-changes-btn');
@@ -217,16 +217,16 @@ function openEditTaskModal(task) {
   saveChangesBtn.addEventListener('click', () => saveTaskChanges(task.id));
 
   // Delete task using a helper function and close the task modal
-  deleteTaskBtn.addEventListener('click', () => {
+  deleteTaskBtn.addEventListener('click', () => { // USER STORY 13 
     deleteTask(task.id);
-    refreshTasksUI()
+    refreshTasksUI() // USER STORY 14
     toggleModal(false, elements.editTaskModal);
   });
 
   toggleModal(true, elements.editTaskModal); 
 }
 
-function saveTaskChanges(taskId) {
+function saveTaskChanges(taskId) { // USER STORY 6
   // Get new user inputs
   const updatedTask = {
     id: taskId,
@@ -266,7 +266,7 @@ function init() {
 
   fetchAndDisplayBoardsAndTasks(); // Initial display of boards and tasks
 }
-function toggleTheme(){
+function toggleTheme(){ // USER STORY 15 , 16
   const isLightTheme = localStorage.getItem('light-theme') === 'enabled';
  if(isLightTheme){
   document.body.classList.add('light-theme'); 
